@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import { GlobalStyles } from "./styles/Global";
+import { ThemeProvider } from "styled-components";
+import MyRoutes from "./routes/MyRoutes";
+import { light, dark } from "./styles/Theme.styled";
+import CountriesHeader from "./components/CountriesHeader";
 
 function App() {
+  const [selectedTheme, setSelectedTheme] = useState(light);
+  //   console.log("App.js selected theme", selectedTheme);
+
+  useEffect(() => {
+    const currentTheme = JSON.parse(localStorage.getItem("current-theme"));
+    if (currentTheme) {
+      setSelectedTheme(currentTheme);
+    }
+  }, []);
+
+  // function to handle user theme selection on click and save it to local storage
+  const HandleThemeChange = () => {
+    console.log("HandleThemeChange selectedTheme", selectedTheme);
+    if (selectedTheme.name === "light") {
+      setSelectedTheme(dark);
+      localStorage.setItem("current-theme", JSON.stringify(dark));
+    } else {
+      setSelectedTheme(light);
+      localStorage.setItem("current-theme", JSON.stringify(light));
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={selectedTheme}>
+      <div className="App">
+        <GlobalStyles />
+        <CountriesHeader
+          theme={selectedTheme}
+          onToggleTheme={HandleThemeChange}
+        />
+        <MyRoutes theme={selectedTheme} />
+      </div>
+    </ThemeProvider>
   );
 }
 

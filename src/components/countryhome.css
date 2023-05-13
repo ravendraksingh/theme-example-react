@@ -1,0 +1,46 @@
+.floating-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+}
+.top-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.filter-container {
+  margin-left: 16px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+/*
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+
+*/
+.custom-search {
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 0.5px solid rgb(220, 220, 220);
+  border-radius: 4px;
+  min-width: 300px;
+}
+select {
+  border: 0.5px solid rgb(220, 220, 220);
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  background-color: white;
+}
+
+@media screen and (min-width: 576px) {
+  .top-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,21 @@
+p {
+  padding: 0;
+  margin: 4px;
+}
+img {
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+.country-name {
+  font-weight: 800;
+  margin-right: 16px;
+}
+.other-info {
+  font-weight: 300;
+}
+.light-text {
+  color: rgb(145, 155, 171);
+}
