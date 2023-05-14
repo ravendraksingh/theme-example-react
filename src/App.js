@@ -35,7 +35,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <ThemeProvider theme={selectedTheme}>
         <GlobalStyles />
         <CountriesHeader
@@ -44,7 +44,7 @@ function App() {
         />
         <MyRoutes />
       </ThemeProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
