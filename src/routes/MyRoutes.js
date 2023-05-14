@@ -5,10 +5,13 @@ import CountryDetails from "../components/CountryDetails";
 
 const MyRoutes = ({ theme }) => {
   return (
-      <Routes>
-        <Route path="/" element={<CountriesHome />} />
-        <Route path="/country/:name" element={<CountryDetails />} />
-      </Routes>
+    <Routes>
+      <Route path="/theme-example-react/" element={<CountriesHome />} />
+      <Route
+        path="/theme-example-react/country/:name"
+        element={<CountryDetails />}
+      />
+    </Routes>
   );
 };
 
