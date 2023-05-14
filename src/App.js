@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     let currentTheme = light;
     const _currTheme = localStorage.getItem("current-theme");
-    console.log("_currTheme", _currTheme);
+    // console.log("_currTheme", _currTheme);
 
     if (_currTheme) {
       currentTheme = JSON.parse(localStorage.getItem("current-theme"));
@@ -41,7 +41,6 @@ function App() {
           theme={selectedTheme}
           onToggleTheme={HandleThemeChange}
         />
-        <CountriesHome />
         <MyRoutes />
       </div>
     </ThemeProvider>

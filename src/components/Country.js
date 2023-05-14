@@ -10,33 +10,28 @@ const Country = ({ countryData, theme }) => {
     // alert(countryData.name.common);
     // return (<div>
     // </div>)
-    window.location.assign(
-      "/theme-example-react/country/" + countryData.name.official
-    );
+    window.location.assign("/country/" + countryData.name.official);
   };
 
   return (
-    <a href={"/theme-example-react/country/" + countryData.name.official}>
-      {/* <Countrycard theme={theme} onClick={showDetailsHandler}> */}
-      <Countrycard theme={theme}>
-        <Card.Img variant="top" src={countryData.flags.svg} />
-        <CountrycardBody theme={theme}>
-          <p className="country-name">{countryData.name.common}</p>
-          <p>
-            <span className="other-info">Population: </span>
-            <span className="light-text">{countryData.population}</span>
-          </p>
-          <p>
-            <span className="other-info">Region: </span>
-            <span className="light-text"> {countryData.region}</span>
-          </p>
-          <p>
-            <span className="other-info">Capital: </span>
-            <span className="light-text"> {countryData.capital[0]}</span>
-          </p>
-        </CountrycardBody>
-      </Countrycard>
-    </a>
+    <Countrycard theme={theme} onClick={showDetailsHandler}>
+      <Card.Img variant="top" src={countryData.flags.svg} />
+      <CountrycardBody theme={theme}>
+        <p className="country-name">{countryData.name.common}</p>
+        <p>
+          <span className="other-info">Population: </span>
+          <span className="light-text">{countryData.population}</span>
+        </p>
+        <p>
+          <span className="other-info">Region: </span>
+          <span className="light-text"> {countryData.region}</span>
+        </p>
+        <p>
+          <span className="other-info">Capital: </span>
+          <span className="light-text"> {countryData.capital[0]}</span>
+        </p>
+      </CountrycardBody>
+    </Countrycard>
   );
 };
 
