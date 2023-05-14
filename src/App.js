@@ -2,19 +2,22 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { GlobalStyles } from "./styles/Global";
 import { ThemeProvider } from "styled-components";
-import MyRoutes from "./routes/MyRoutes";
 import { light, dark } from "./styles/Theme.styled";
+import MyRoutes from "./routes/MyRoutes";
 import CountriesHeader from "./components/CountriesHeader";
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(light);
-  //   console.log("App.js selected theme", selectedTheme);
 
   useEffect(() => {
-    const currentTheme = JSON.parse(localStorage.getItem("current-theme"));
-    if (currentTheme) {
-      setSelectedTheme(currentTheme);
+    let currentTheme = light;
+    const _currTheme = localStorage.getItem("current-theme");
+    console.log("_currTheme", _currTheme);
+
+    if (_currTheme) {
+      currentTheme = JSON.parse(localStorage.getItem("current-theme"));
     }
+    setSelectedTheme(currentTheme);
   }, []);
 
   // function to handle user theme selection on click and save it to local storage
@@ -31,13 +34,13 @@ function App() {
 
   return (
     <ThemeProvider theme={selectedTheme}>
-      <div className="App">
+      <div>
         <GlobalStyles />
         <CountriesHeader
           theme={selectedTheme}
           onToggleTheme={HandleThemeChange}
         />
-        <MyRoutes theme={selectedTheme} />
+        <MyRoutes />
       </div>
     </ThemeProvider>
   );

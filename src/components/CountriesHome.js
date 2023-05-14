@@ -69,34 +69,36 @@ const CountriesHome = ({ theme }) => {
   };
 
   return (
-    <MainContent className="px-1 px-sm-3 px-lg-5">
-      <div className="top-nav px-0 mb-3">
-        <input
-          className="custom-search"
-          type="search"
-          placeholder="Search for a country..."
-          onChange={filterByCountryHandler}
-        />
-        <select placeholder="Filter by Region" onChange={regionChangeHanlder}>
-          {regions.map((region) => (
-            <option key={region.name} value={region.name}>
-              {region.value}
-            </option>
+    <>
+      <MainContent className="px-1 px-sm-3 px-lg-5">
+        <div className="top-nav px-0 mb-3">
+          <input
+            className="custom-search"
+            type="search"
+            placeholder="Search for a country..."
+            onChange={filterByCountryHandler}
+          />
+          <select placeholder="Filter by Region" onChange={regionChangeHanlder}>
+            {regions.map((region) => (
+              <option key={region.name} value={region.name}>
+                {region.value}
+              </option>
+            ))}
+          </select>
+        </div>
+        <Row xs={1} md={2} lg={3} xl={4} className="px-0">
+          {filteredCountries?.map((countryData, index) => (
+            <Col key={"akd239an_" + index} className="mx-0 px-2">
+              <Country
+                countryData={countryData}
+                key={"asdfeng1_" + index}
+                theme={theme}
+              />
+            </Col>
           ))}
-        </select>
-      </div>
-      <Row xs={1} md={2} lg={3} xl={4} className="px-0">
-        {filteredCountries?.map((countryData, index) => (
-          <Col key={"akd239an_" + index} className="mx-0 px-2">
-            <Country
-              countryData={countryData}
-              key={"asdfeng1_" + index}
-              theme={theme}
-            />
-          </Col>
-        ))}
-      </Row>
-    </MainContent>
+        </Row>
+      </MainContent>
+    </>
   );
 };
 
