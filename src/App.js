@@ -6,6 +6,7 @@ import { light, dark } from "./styles/Theme.styled";
 import MyRoutes from "./routes/MyRoutes";
 import CountriesHeader from "./components/CountriesHeader";
 import CountriesHome from "./components/CountriesHome";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(light);
@@ -34,16 +35,16 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={selectedTheme}>
-      <div>
+    <HashRouter>
+      <ThemeProvider theme={selectedTheme}>
         <GlobalStyles />
         <CountriesHeader
           theme={selectedTheme}
           onToggleTheme={HandleThemeChange}
         />
         <MyRoutes />
-      </div>
-    </ThemeProvider>
+      </ThemeProvider>
+    </HashRouter>
   );
 }
 

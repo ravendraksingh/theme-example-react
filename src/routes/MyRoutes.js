@@ -5,12 +5,10 @@ import CountryDetails from "../components/CountryDetails";
 
 const MyRoutes = ({ theme }) => {
   return (
-    <HashRouter>
       <Routes>
         <Route path="/" element={<CountriesHome />} />
         <Route path="/country/:name" element={<CountryDetails />} />
       </Routes>
-    </HashRouter>
   );
 };
 
