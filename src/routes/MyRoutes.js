@@ -7,7 +7,7 @@ const MyRoutes = ({ theme }) => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<CountriesHome />} />
+        <Route path="/home" element={<CountriesHome />} />
         <Route path="/country/:name" element={<CountryDetails />} />
       </Routes>
     </BrowserRouter>
