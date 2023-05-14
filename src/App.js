@@ -5,6 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { light, dark } from "./styles/Theme.styled";
 import MyRoutes from "./routes/MyRoutes";
 import CountriesHeader from "./components/CountriesHeader";
+import CountriesHome from "./components/CountriesHome";
 
 function App() {
   const [selectedTheme, setSelectedTheme] = useState(light);
@@ -40,6 +41,7 @@ function App() {
           theme={selectedTheme}
           onToggleTheme={HandleThemeChange}
         />
+        <CountriesHome />
         <MyRoutes />
       </div>
     </ThemeProvider>
