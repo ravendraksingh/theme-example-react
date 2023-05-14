@@ -1,13 +1,11 @@
 import React from "react";
-import { BrowserRouter, HashRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import CountriesHome from "../components/CountriesHome";
 import CountryDetails from "../components/CountryDetails";
 
 const MyRoutes = ({ theme }) => {
   return (
-    <HashRouter
-      basename={"/theme-example-react"}
-    >
+    <HashRouter basename={"/theme-example-react"}>
       <Routes>
         <Route path="/home" element={<CountriesHome />} />
         <Route

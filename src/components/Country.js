@@ -10,7 +10,9 @@ const Country = ({ countryData, theme }) => {
     // alert(countryData.name.common);
     // return (<div>
     // </div>)
-    window.location.assign("/country/" + countryData.name.official);
+    window.location.assign(
+      "/theme-example-react/country/" + countryData.name.official
+    );
   };
 
   return (
