@@ -21,13 +21,12 @@ const CountriesHome = ({ theme }) => {
   const fetchCountriesDetails = () => {
     fetch(
       "https://restcountries.com/v3.1/all?fields=name,flags,population,capital,region"
-      //   "https://restcountries.com/v3.1/name/spain?fields=name,region,population,capital,flags"
     )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        // console.log("data", data);
+        console.log("data", data);
         setCountries(data);
         setFilteredCountries(data);
       });
