@@ -6,7 +6,7 @@ import CountryDetails from "../components/CountryDetails";
 const MyRoutes = ({ theme }) => {
   return (
     <HashRouter
-    //   basename={"https://ravendraksingh.github.io/theme-example-react"}
+      basename={"/theme-example-react"}
     >
       <Routes>
         <Route path="/home" element={<CountriesHome />} />
