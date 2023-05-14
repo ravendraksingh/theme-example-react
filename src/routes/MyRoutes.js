@@ -5,7 +5,7 @@ import CountryDetails from "../components/CountryDetails";
 
 const MyRoutes = ({ theme }) => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/home" element={<CountriesHome />} />
         <Route path="/country/:name" element={<CountryDetails />} />
